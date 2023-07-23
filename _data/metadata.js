@@ -1,6 +1,6 @@
 module.exports = {
 	title: "Eleventy Base Blog v8",
-	url: "https://calm54.github.io/Profile-page/",
+	url: "https://calm54",
 	language: "en",
 	description: "I am writing about my new found World of IT",
 	author: {
