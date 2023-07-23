@@ -6,4 +6,4 @@ eleventyNavigation:
 ---
 # About Me
 
-I am a person that writes stuff.
+My name is Catherine and I am a Student at Coders Guild learning some Web Design and Development.
