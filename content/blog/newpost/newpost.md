@@ -10,4 +10,4 @@ I look forward to applying and showcasing more concepts as I get along with my c
 
 Thanks.
 
-{% image "![Alt text](work3-1.png)", "An image of a pet dog in a work suit" %}
+{% image "work3-1.png", "An image of a pet dog in a work suit" %}
