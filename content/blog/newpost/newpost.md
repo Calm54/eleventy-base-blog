@@ -1,7 +1,6 @@
 ---
 title: This is a new post added by Me
 date: 2023-07-23
-draft: true
 ---
 This post would grow as I get to know more about Static sites.
 This has actually been a great learning curve for me, especially seeing as I can do a lot of things with it.
