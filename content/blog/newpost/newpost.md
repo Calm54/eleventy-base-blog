@@ -8,5 +8,4 @@ This has actually been a great learning curve for me, especially seeing as I can
 I look forward to applying and showcasing more concepts as I get along with my course.
 
 Thanks.
-
 {% image "work3-1.png", "An image of a pet dog in a work suit" %}
