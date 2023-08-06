@@ -75,6 +75,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   Name: <input type="text" name="name">
   <span class="error">* <?php echo $nameErr;?></span>
   <br><br>
+  Last Name: <input type="text" name="name">
+  <br><br>
   E-mail: <input type="text" name="email">
   <span class="error">* <?php echo $emailErr;?></span>
   <br><br>
