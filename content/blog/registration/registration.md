@@ -10,18 +10,36 @@ This is where you can register on my Blog.
 
 
 <?php
+// define variables and set to empty values
+$nameErr = $emailErr = "";
+$name = $email = $comment = "";
 
-require 'database/database.php';
-
-$errors = [];
-
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    if ($_POST['title'] == '') {
-        $errors[] = 'Title is required';
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  if (empty($_POST["name"])) {
+    $nameErr = "Name is required";
+  } else {
+    $name = test_input($_POST["name"]);
+    // check if name only contains letters and whitespace
+    if (!preg_match("/^[a-zA-Z-' ]*$/",$name)) {
+      $nameErr = "Only letters and white space allowed";
     }
-    if ($_POST['content'] == '') {
-        $errors[] = 'Content is required';
+  }
+  
+  if (empty($_POST["email"])) {
+    $emailErr = "Email is required";
+  } else {
+    $email = test_input($_POST["email"]);
+    // check if e-mail address is well-formed
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+      $emailErr = "Invalid email format";
     }
+  }
+    
+  if (empty($_POST["comment"])) {
+    $comment = "";
+  } else {
+    $comment = test_input($_POST["comment"]);
+  }
 
     if (empty($errors)) {
         $sql =
@@ -51,38 +69,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 ?>
 
-<?php require 'includes/header.php'; ?>
-
-<h2>New article</h2>
-
-<?php if (!empty($errors)): ?>
-<ul>
- <?php foreach ($errors as $error): ?>
- <li><?= $error ?></li>
- <?php endforeach; ?>
-</ul>
-<?php endif; ?>
-
+<h2>Registration form</h2>
+<p><span class="error">* required field</span></p>
 <form method="post" id="formArticle">
-
- <div>
-  <label for="title">Title</label>
-  <input name="title" id="title" placeholder="Article title">
- </div>
-
- <div>
-  <label for="content">Content</label>
-  <textarea name="content" rows="4" cols="40" id="content" placeholder="Article content"></textarea>
- </div>
-
- <div>
-  <label for="published_at">Publication date and time</label>
-  <input type="datetime-local" name="published_at" id="published_at">
- </div>
-
-
- <button>Add</button>
-
+  Name: <input type="text" name="name">
+  <span class="error">* <?php echo $nameErr;?></span>
+  <br><br>
+  E-mail: <input type="text" name="email">
+  <span class="error">* <?php echo $emailErr;?></span>
+  <br><br>
+  Comment: <textarea name="comment" rows="5" cols="40"></textarea>
+  <br><br>
+  <input type="submit" name="submit" value="Submit">  
 </form>
 
-<?php require 'includes/footer.php'; ?>
+</body>
+</html>
