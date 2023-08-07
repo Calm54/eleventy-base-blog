@@ -18,13 +18,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->close();
         $stmt->close();
     }
-
-
-
-
-
-
-
     // Process the data as needed (e.g., send an email, store in a database, etc.)
     // For testing purposes, you can simply echo the data.
   //  echo "First Name: " . $firstName . "<br>";
