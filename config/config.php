@@ -1,5 +1,5 @@
 <?php
 define('HOST', 'localhost');
-define('DATABASE', 'blog_db');
-define('USERNAME', 'blog_user_example');
-define('PASWWORD', 'madcowboy92');
+define('DATABASE', 'ssg_db');
+define('USERNAME', 'root');
+define('PASWWORD', '');
